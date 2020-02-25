@@ -1,0 +1,43 @@
+<!-- content -->
+<div class="container mt-5">
+  <!-- Page 1 -->
+  <div class="card shadow bg-white rounded">
+    <div class="card-body" [ngClass]="{ 'bg-primary': isShow }">
+      <blockquote class="blockquote mb-0">
+        <p>
+          {{ message?.msg }}
+        </p>
+        <footer class="blockquote-footer">
+          {{ message?.autor }}
+        </footer>
+      </blockquote>
+    </div>
+  </div>
+
+  <div>
+    <div class="card-columns mt-5">
+      <div
+        *ngFor="let movie of listMovies; let i = index"
+        class="card shadow mb-3 bg-white rounded card-{{ i }}"
+      >
+        <img src="assets/images/default.jpg" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">
+            {{ movie.title | capitalize:true  }}
+          </h5>
+          <p class="card-text">
+            This is a longer card with supporting text below as a natural
+            lead-in to additional content. This content is a little bit longer.
+          </p>
+        </div>
+        <div class="card-footer bg-transparent">
+          <button class="btn btn-primary">Editar</button>
+          <button class="btn btn-danger float-right">Eliminar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Page 1 -->
+</div>
+
+<!-- content -->
